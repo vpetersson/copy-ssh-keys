@@ -6,7 +6,7 @@ This is a little helper to make it easy to install your public SSH keys from Git
 All you need to do is to add the following function to your `~/.bashrc`/`~/.zshrc`:
 ```bash
 function install-ssh-key(){
-    docker run -ti vpetersson/copy-ssh-keys \
+    docker run -rm -ti vpetersson/copy-ssh-keys \
         ansible-playbook -i $1, --ask-pass -u $2 /root/playbook.yml
 }
 ```
