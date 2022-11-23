@@ -1,0 +1,10 @@
+---
+- name: Install ssh keys
+  hosts: all
+
+  tasks:
+  - name: Set authorized keys taken from url
+    ansible.posix.authorized_key:
+      user: "{{ ansible_ssh_user }}"
+      state: present
+      key: https://github.com/vpetersson.keys
